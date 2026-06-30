@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kesavan's Portfolio</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/about/">About Me</a> | 
+        <a href="/contact/">Contact</a> | 
+        <a href="/tasks/">Tasks</a>
+        
+        <br><br>
+        
+        {% if user.is_authenticated %}
+            <strong>Welcome, {{ user.username }}!</strong> 
+            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </nav>
+    <hr> {% block content %}
+    {% endblock %}
+</body>
+</html>

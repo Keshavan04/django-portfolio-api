@@ -1,0 +1,8 @@
+# Hide the security vault
+.env
+
+# Hide your virtual environment (so it doesn't upload 10,000 files)
+env/
+
+# Hide the local database (optional, but good practice)
+db.sqlite3

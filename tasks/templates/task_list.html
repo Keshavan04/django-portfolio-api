@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>My Task Manager</h2>
+    
+    <h3>Add a New Task</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Task</button>
+    </form>
+    
+    <hr>
+    
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }} 
+                - Status: {% if task.completed %} Done {% else %} Pending {% endif %}
+            </li>
+        {% empty %}
+            <li>No tasks created yet!</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

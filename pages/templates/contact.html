@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Contact Me </h1>
+<p>phn no: 9361245055</p>
+<p>email :hkesavan2004@gmail.com</p>
+<a href="https://www.linkedin.com/in/kesavan-haridoss-9b6067255">Kesavan Haridoss</a>
+
+
+<p>If you are a recruiter or want to collaborate, dropa message below!</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Send Message</button>
+</form>
+
+{% endblock %}

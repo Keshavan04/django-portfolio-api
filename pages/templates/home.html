@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to the KESAVAN's Portfolio!</h1>
+    <p>I am learning Django to become a backend developer.</p>
+
+    <h2>My Projects</h2>
+    <ul>
+        {% for project in projects %}
+
+         <li>
+            <strong>{{project.title}} </strong> 
+            <br>
+            Built with : {{project.technology}}
+            <br>
+            {{ project.description }}
+         </li>
+
+         {% empty %}
+                <p>No projects added yet! Go to the Admin dashboard to add some.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
