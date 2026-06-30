@@ -34,7 +34,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default = False)
 
-ALLOWED_HOSTS = ['django-portfolio-api-sxp9.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['django-portfolio-api-sxp9.onrender.com/api/', '127.0.0.1', 'localhost']
 
 
 # Application definition
